@@ -7,7 +7,7 @@ The binary work is very simple: get a stream of JSON lines from stdin, send them
 Example:
 
 ```sh
-tail -f myjsonllogs.json | ./siemsend sentinel --customer_id=yourcustomerid --shared_key=yoursharedkey --log_type=yourlogtype | tee -a failedtosend.json
+tail -F myjsonllogs.json | ./siemsend sentinel --customer_id=yourcustomerid --shared_key=yoursharedkey --log_type=yourlogtype | tee -a failedtosend.json
 ```
 
-Currently, only Azure Sentinel is implemented. More to come if this is popular enough :) 
+Currently, only Microsoft Sentinel is implemented. More to come if this is popular enough :) 

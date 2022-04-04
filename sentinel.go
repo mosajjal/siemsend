@@ -21,8 +21,8 @@ import (
 func (s Sentinel) Init() error {
 	sentinelCmd := &cobra.Command{
 		Use:   "sentinel [arguments]",
-		Short: "send input data to Azure Sentinel",
-		Long:  `make sure your data is in jsonl format, meaning each line is a separate json object. They'll be reconstructed into a JSON array and sent to Azure Sentinel.`,
+		Short: "send input data to Microsoft Sentinel",
+		Long:  `make sure your data is in jsonl format, meaning each line is a separate json object. They'll be reconstructed into a JSON array and sent to Microsoft Sentinel.`,
 		Args:  cobra.ExactArgs(0),
 		Run: func(cmd *cobra.Command, args []string) {
 			s.Send(cmd, args)
@@ -86,7 +86,7 @@ x-ms-date:{{.Date}}
 }
 
 func (s Sentinel) sendBatch(batch string, totalSize uint) {
-	// send batch to Azure Sentinel
+	// send batch to Microsoft Sentinel
 	// build signature
 	location, _ := time.LoadLocation("GMT")
 	signatureElemets := SignatureElements{
